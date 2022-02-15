@@ -1,0 +1,63 @@
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산 관광정보</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="project.css" />
+    <script type="text/javaScript" src="project.js"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=e9wbc45fpm&submodules=drawing"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="project_query.js"></script>
+</head>
+<body>
+    <div id="list">
+        <div id="place_nav">
+            <button class="category_button" onclick="changeMenu(0)">맛집</button>
+            <button class="category_button" onclick="changeMenu(1)">관광명소</button>
+            <button class="category_button" onclick="setChargerMarker()">장애인<br>편의시설</button>
+            <form name="search" method="dialog">
+                <input type="text" name="keyword">
+                <button class="submit_button" onclick="searchListItem()">
+                    <img src="./round_search_black.png">
+                </button>
+            </form>
+        </div>
+        <div id="place"  class="long_content">
+            <ul class="food_list"></ul>
+            <ul class="food_list"></ul>
+            <ul class="food_list"></ul>
+            <ul class="food_list"></ul>
+
+            <ul class="place_list"></ul>
+            <ul class="place_list"></ul>
+            <ul class="place_list"></ul>
+            <ul class="place_list"></ul>
+        </div>
+    </div>
+    <div id="map">
+    </div>
+    <button id="extend_button"></button>
+    <div id="describe">
+        <div class="content" id="food_content">
+            <h2></h2>
+            <button class="lang_button" onclick="changeLanguage()"><img src="./korea.png" alt="flag"><p>Ko</p></button>
+            <img id="photo" alt="photo">
+            <div id="available" class="impact"></div>      
+            <div id="menu" class="impact"></div>
+            <div id="detail"></div>
+            <div id="address" class="impact"></div>
+            <div id="call" class="impact"></div>            
+        </div>
+        <div class="content" id="place_content">
+            <h2></h2>
+            <button class="lang_button" onclick="changeLanguage()"><img src="./korea.png" alt="flag"><p>Ko</p></button>
+            <img id="view" alt="view">  
+            <div id="welfare" class="impact"></div>
+            <div id="p_detail" ></div>
+            <div id="p_call" class="impact"></div>     
+            <div id="p_address" class="impact"></div>    
+        </div>
+    </div>
+</body>
